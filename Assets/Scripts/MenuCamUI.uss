@@ -1,0 +1,21 @@
+
+.main_optn {
+	-unity-font: url('project:/Assets/Fonts/Corn_Farm.ttf');
+	-unity-font-definition: none;
+	position: absolute;
+	left: 50%;
+	top: 90%;
+	translate: -50% -50%;
+	font-size: 40px;
+	padding: 1% 10% 1% 10%;
+	border-radius: 30px;
+	background-color: rgba(255, 242, 0, 1.0);
+}
+
+.main_optn:hover {
+	background-color: rgba(250, 241, 80, 1.0);
+}
+
+.main_optn:active {
+	background-color: rgba(255, 250, 158, 1.0);
+}
