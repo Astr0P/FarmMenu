@@ -50,6 +50,8 @@ public class sub_menus : MonoBehaviour
         bttn_3_2.onClick.AddListener(() => select_go(GameObject.Find("SM_Env_Flowers_01")));
         bttn_3_3.onClick.AddListener(() => select_go(GameObject.Find("SM_Env_Pebbles_01")));
         bttn_3_4.onClick.AddListener(() => select_go(GameObject.Find("SM_Generic_Grass_Patch_02")));
+
+        status = false;
     
     } // end of Start() 
          
@@ -69,7 +71,8 @@ public class sub_menus : MonoBehaviour
                            
     GameObject select_go(GameObject game_object) { 
 
-        go = game_object; 
+        go = game_object;
+        status = true;
         return go;   
     
     }

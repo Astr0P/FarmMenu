@@ -9,7 +9,10 @@ public class options : MonoBehaviour
 {
      
     float delay_time;
-    Button bttn_1, bttn_2, bttn_3, bttn_4;
+    Button bttn_1;
+    Button bttn_2;
+    Button bttn_3;
+    Button bttn_4;
     Button[] bttns = new Button[3];
     StyleColor[] colors = new StyleColor[3];
     GameObject[] sub_menus = new GameObject[3]; // allocate 3 sub_menus
@@ -17,22 +20,20 @@ public class options : MonoBehaviour
     bool status;
     int count;
     bool ctrl;
-
     // Start is called before the first frame update
     void Start() 
     {
-
         UIDocument uid = gameObject.GetComponent<UIDocument>();
         var root = uid.rootVisualElement;
         
-        bttn_1 = root.Q<Button>("bttn_1");
-        bttn_2 = root.Q<Button>("bttn_2");
-        bttn_3 = root.Q<Button>("bttn_3");
-        bttn_4 = root.Q<Button>("bttn_4");
+        bttn_1 = root.Q<Button>("button_1");
+        bttn_2 = root.Q<Button>("button_2");
+        bttn_3 = root.Q<Button>("button_3");
+        bttn_4 = root.Q<Button>("button_4");
      
-        bttns[0] = root.Q<Button>("bttn_1");
-        bttns[1] = root.Q<Button>("bttn_2");
-        bttns[2] = root.Q<Button>("bttn_3");
+        bttns[0] = root.Q<Button>("button_1");
+        bttns[1] = root.Q<Button>("button_2");
+        bttns[2] = root.Q<Button>("button_3");
            
         sub_menus[0] = GameObject.Find("sub_menu_1");
         sub_menus[1] = GameObject.Find("sub_menu_2");
@@ -42,7 +43,7 @@ public class options : MonoBehaviour
         bttns[1].clicked += () => switch_option(bttns[1]);
         bttns[2].clicked += () => switch_option(bttns[2]);
         
-        bttn_4.clicked += () => SceneManager.LoadScene("main_menu");
+        bttn_4.clicked += () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         
         status = false;
         count = 0;
@@ -53,7 +54,6 @@ public class options : MonoBehaviour
      // Update is called once per frame
     void Update() 
     {
-    
         count += 1;
         if (count > 1  && ctrl) 
         {
@@ -65,7 +65,7 @@ public class options : MonoBehaviour
         if (count > 1) ctrl = false;                 
                             
     } // end of Update()        
-         
+
     void switch_option(Button bttn) 
     {  
 

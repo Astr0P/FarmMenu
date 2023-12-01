@@ -1,1 +1,26 @@
-VisualElement {}
+
+.menu_optn {
+	-unity-font: url('project:/Assets/Fonts/Corn_Farm.ttf');
+	-unity-font-definition: none;
+	position: absolute;
+	top: 85%;
+	font-size: 30px;
+	border-radius: 30px;
+	padding: 1% 1% 1% 1%;
+}
+
+#button_1 {
+	left: 15%;
+}
+
+#button_2 {
+	left: 35%;
+}
+
+#button_3 {
+	left: 55%;
+}
+
+#button_4 {
+	left: 75%;
+}
